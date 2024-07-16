@@ -1,0 +1,90 @@
+<p></p>
+<div class="container">
+  <nav class="p-2 m-2 border border-info">
+    <div align="CENTER"><button class="btn btn btn-outline-info" *ngIf="authService.hasRole('ADMIN')" (click)="handleBouton()" >New connection</button></div>
+  </nav>
+</div>
+
+<p></p>
+
+
+
+<div class="container">
+  <div class="card">
+    <div class="card-body">
+ <div align="LEFT" class="form-group">
+  <label for="label" class="form-label">___Effectuer une recherche?  <i class="bi bi-search"></i></label>
+  <input type="text" id="exampleInputPassword" class="form-control" name="search" [(ngModel)]="searchText" placeholder="Taper ici ">
+ </div>
+</div>
+</div>
+</div>
+
+
+<div class="container">
+  <div class="card">
+    <div class="card-header">LISTE</div>
+    <div class="card-body">
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>nom</th>
+            <th>categorie</th>
+            <th>lien</th>
+            <th>localisation</th>
+            <th>date</th>
+            <th>commentaire</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let row of employeeData |filter:searchText|paginate: {itemsPerPage:5, currentPage:p};let i=index " >
+            <td>{{row.id}}</td>
+            <td>{{row.nom}}</td>
+            <td>{{row.categorie}}</td>
+            <td>{{row.lien}}</td>
+            <td>{{row.localisation}}</td>
+            <td>{{row.date}}</td>
+            <td>{{row.commentaire}}</td>
+
+            <td *ngIf="authService.hasRole('ADMIN')">
+            <button (click)="deleteEmploye(row)" class="btn btn-danger mx-2"><i class="bi bi-trash"></i></button>
+            </td>
+            <td *ngIf="authService.hasRole('ADMIN')">
+              <button (click)="deleteEmploye(row)" class="btn btn-info"><i class="bi bi-pencil square"></i></button>
+              </td>
+            <td>
+            <button  (click)="connexion()"  (click)="onEdit(row)" class="btn btn-outline-success mx-1"><i class="bi bi-capslock-fill"></i>Connect
+            </button>
+
+
+           </td>
+          </tr>
+       </tbody>
+
+
+      </table>
+      <pagination-controls (pageChange)="p=$event"></pagination-controls>
+
+
+      <div class="card-body">
+        <form [formGroup]="formValue">
+         <div class="input-group">
+           <label for="exampleInputPassword1" class="input-group-text">__Lien:</label>
+           <input type="text" placeholder="Effectuer une connection directe ici" formControlName="lien" class="form-control">
+           <button class="btn btn-info" (click)="connexion()"><i class="bi bi-capslock-fill"></i>Connect</button>
+         </div>
+        </form>
+      </div>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+

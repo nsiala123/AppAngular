@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="card">
+    <div class="card-header">LISTE</div>
+    <div class="card-body">
+      <form [formGroup]="formValue">
+       <div class="mb-3">
+         <label for="exampleInputPassword1" class="form-label">nom</label>
+         <input type="text" formControlName="nom" class="form-control" id="exampleInputPassword">
+       </div>
+       <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">categorie</label>
+        <input type="text" placeholder="selectionnez une categorie ou definissez en une nouvelle" formControlName="categorie" class="form-control" id="exampleInputPassword">
+         <select type="text" placeholder="categorie" formControlName="categorie" class="form-control" id="exampleInputPassword">
+         <option value="Client">Client</option>
+         <option value="Urgent">Urgent</option>
+         <option value="Administration">Administration</option>
+         <option value="Personel">Personel</option>
+         <option value="Autres">Autres</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label" >lien</label>
+        <input type="text" placeholder="saisir correctement le lien" formControlName="lien" class="form-control" id="exampleInputPassword">
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label" >localisation</label>
+        <input type="text" placeholder="saisir l'emplacement de l'equipement" formControlName="localisation" class="form-control" id="exampleInputPassword">
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label" >date</label>
+        <input type="text" placeholder="saisir la date" formControlName="date" class="form-control" id="exampleInputPassword">
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">commentaire</label>
+        <input type="text" placeholder="Ajouter un commentaire" formControlName="commentaire" class="form-control" id="exampleInputPassword">
+      </div>
+
+      <button type="button" (click)="postConnectionDetails()" class="btn btn-primary">Save</button>
+    </form>
+  </div>
+
+   </div>
+ </div>

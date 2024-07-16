@@ -1,0 +1,44 @@
+{
+  "posts": [
+    {
+      "id": 2,
+      "nom": "Passerelle GSM",
+      "categorie": "Administration",
+      "lien": "http://192.168.20.28",
+      "localisation": "sous-sol",
+      "date": null,
+      "commentaire": "interface de configuration"
+    },
+    {
+      "id": 3,
+      "nom": "Messagerie",
+      "categorie": "Personel",
+      "lien": "https://mail.google.com/mail/u/0/#inbox",
+      "localisation": null,
+      "date": null,
+      "commentaire": "ma boite mail"
+    },
+    {
+      "id": 4,
+      "nom": "agecelebir",
+      "categorie": "Autres",
+      "lien": "https://agacelebir.com/4/4370757",
+      "localisation": null,
+      "date": null,
+      "commentaire": null
+    },
+    {
+      "id": 5,
+      "nom": "passerelle GSM",
+      "categorie": "Administration",
+      "lien": "http://192.168.27.10",
+      "localisation": "4e etage",
+      "date": "10/08/2022",
+      "commentaire": null
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}
